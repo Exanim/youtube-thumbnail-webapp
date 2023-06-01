@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(to bottom, #f1f1f1, #ffffff);
+      }
+      .middle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      h2 {
+        margin-top: 0;
+      }
+      button {
+        border: none
+        border-radius: 20px;
+        margin: 10px 10px;
+        display: flex;
+        align-items: center;
+        height: 35px;
+        width: 120px;
+        background-image: linear-gradient(to right, #1facd6 0%, #77cee9 51%, #1facd6 100%);
+      }
+      .input {
+          border: none
+          border-radius: 25px;
+          width: 500px;
+          display: center;
+          padding: 5px;
+          font-size: 16px;
+          background-image: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);
+      }
+      .thumbnails-wrapper {
+        text-align: center;
+        margin: 10px;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+</head>
+<body>
+    <div class="middle">
+        <h2 class="">Youtube Thumbnail Viewer</h2>
+        <form method="POST">
+            <input class="input" type="text" name="video_url" placeholder="Enter YouTube video URL">
+            <div class="middle">
+                <button>
+                    <p>Get Thumbnails</p>
+                </button>
+            </div>
+        </form>
+        {% if thumbnail_urls %}
+        <div class="thumbnails-wrapper">
+            <h2>Thumbnails from the given YouTube video:</h2>
+            {% for thumbnail_url in thumbnail_urls %}
+            <div class="thumbnail-container">
+                <p>{{ thumbnail_url }}</p>
+                <img src="{{ thumbnail_url }}" alt="Thumbnail">
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
