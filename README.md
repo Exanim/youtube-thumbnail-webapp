@@ -14,7 +14,7 @@ This web app allows you to enter a YouTube video link and displays three thumbna
      git clone [https://github.com/Exanim/youtube-thumbnail-webapp.git](https://https://github.com/Exanim/youtube-thumbnail-webapp.git)
 2. Start the web app in the directory you cloned into:
 	 python app.py
-3. Open your web browser and go to `http://localhost:5000` to access the web app.
+3. Open your web browser and go to `http://localhost:5000`.
 
 ## Technologies Used  
 
